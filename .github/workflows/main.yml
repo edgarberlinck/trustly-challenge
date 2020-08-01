@@ -20,22 +20,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Setup Node
+    - uses: actions/checkout@v2
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-    
-    - name: Checkout Sources
-      uses: actions/checkout@v2
-    
-    - name: Install dependencies
-      uses: Adzz/yarn_command_action@v1.0.0
-      with: 
-        command: install
-    
-    - name: Run a yarn or npm command
-      uses: Adzz/yarn_command_action@v1.0.0
-      with:
-        # Specify whether to use npm or yarn to run the tests. May be npm or yarn only defaults to yarn
-        # The command you wish to run e.g. test
-        command: test
+    - run: yarn install
+    - run: yarn test
