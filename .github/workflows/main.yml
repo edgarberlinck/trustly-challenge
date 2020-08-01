@@ -23,6 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js 14.x
       uses: actions/setup-node@v1
-    - run: cd node-api
     - run: yarn install
+      working-directory: ./node-api
     - run: yarn test
+      working-directory: ./node-api
