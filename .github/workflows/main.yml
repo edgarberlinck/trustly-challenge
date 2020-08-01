@@ -21,6 +21,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
-    - name: Yarn Test Action
-      uses: onichandame/node-test-action@0.0.0
+    - name: Run a yarn or npm command
+      uses: Adzz/yarn_command_action@v1.0.0
+      with:
+        # Specify whether to use npm or yarn to run the tests. May be npm or yarn only defaults to yarn
+        # The command you wish to run e.g. test
+        command: test
