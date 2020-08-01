@@ -16,7 +16,6 @@ export default function (repositoryUrl) {
       return null
     }
     
-    console.log(url)
     return url
   } catch {
     return null
